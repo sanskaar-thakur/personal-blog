@@ -1,0 +1,12 @@
+footer{
+  background-color: white;
+  margin: auto;
+  width: 50%;
+  align-self: center;
+  text-align: center;
+}
+
+hr{
+  width: 100%;
+  opacity: 0.2;
+}
