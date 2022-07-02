@@ -1,2 +1,85 @@
 <h2>Blog Posts</h2>
-<p>Coming up, stay tuned!</p>
+
+<div>
+  <h2>#1</h2>
+  <h2>Introduction to Kubernetes</h2>
+
+  <p id="9ff9">As containers have gained in popularity over the past few years, Kubernetes consulting is redefining the way software is developed, deployed, and maintained. Most of the articles on the internet declare that Kubernetes is taking container orchestration by storm.</p>
+  <p id="537e">We are wondering about its usage, so I searched on the web for surveys and concluded Kubernetes indeed is the highest-used container orchestration tool.</p>
+  <h3 id="0b26">History of Kubernetes</h3>
+  <p id="6d42">When Docker continued to thrive managing microservices and containers, a container management system became a paramount requirement. During that time, Google was already running a container-based management infrastructure for many years and in that era, the company made a bold decision to open-source an in-house project called Borg.</p>
+  <p id="b9a2">Borg was a key to running Google’s services like Gmail and Google Search. To enhance the functionalities of the container management system, the company came up with
+    <a href="https://onlineitguru.com/blogger/what-is-kubernetes">
+      <strong>Kubernetes</strong>
+    </a>
+     — an open-source project that automates the process of deploying and managing multi-container applications at scale. Kubernetes came into existence in mid-2014 and in a short span of time grown as an open-source community with engineers from Google, Red Hat, and many other companies contributing to the project.</p>
+     <h3 id="3d4d">What is Kubernetes?</h3>
+     <p id="7535">Kubernetes is an open-source platform/tool created by Google. It is written in GO-Lang. Kubernetes is also known as “K8s”. With Kubernetes, you can run any Linux container across private, public, and hybrid cloud environments. Kubernetes provides some edge functions, such as Load balancer, Service discovery, and Role Based Access Control(RBAC).</p>
+     <h3 id="b7be">Why do we need it?</h3>
+     <p id="3616">When we run our production environments using a microservices pattern with many containers, we need to make sure many things, such as health check, version control, scaling, and rollback mechanism. It will be very frustrating to make sure all of these things still be ok. Kubernetes gives you the orchestration and management capabilities required to deploy containers, at scale. Kubernetes orchestration allows you to build application services that span multiple containers, schedule those containers across a cluster, scale those containers, and manage the health of those containers over time. I can say Kubernetes is more like a manager that has many subordinates(containers). What manager does is maintain what subordinates need to do :)</p>
+     <p id="400d">You need to prepare your infrastructure to deploy a new microservice. I believe it cost you a few days or a week. Without Kubernetes, large teams would have to manually script the deployment workflows. With Kubernetes, you don’t need to create your deployment script manually and it will reduce the amount of time and resources spent on DevOps.</p>
+     <p id="aaf4">Key feature of Kubernetes:</p>
+     <ul>
+      <li id="c1df">
+        <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Horizontal Scaling</a>
+      </li>
+      <li id="7b5f">
+        <a href="https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/">Auto Scaling</a>
+      </li>
+      <li id="3310">
+        <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/">Health check</a> &amp;
+        <a href="https://multinode-kubernetes-cluster.readthedocs.io/en/latest/14-k8s-selfhealing.html">Self-healing</a>
+      </li>
+      <li id="9463">
+        <a href="https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/">Load Balancer</a>
+      </li>
+      <li id="0eb3">
+        <a href="https://kubernetes.io/docs/concepts/services-networking/service/">Service Discovery</a>
+      </li>
+      <li id="acb9">
+        <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#rolling-back-a-deployment">Automated rollbacks</a> &amp;
+        <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment">rollouts</a>
+      </li>
+      <li id="9742">Canary deployment</li>
+    </ul>
+    <p id="2c46">Kubernetes provides much more beyond the basic framework, enabling users to choose the type of application frameworks, languages, monitoring and logging tools, and other tools of their choice. Although it is not Platform as a Service, it can be used as a basis for a complete PaaS.</p>
+    <p id="5464">In a few years, it has become a highly popular tool and one of the biggest success stories on the open-source platform.</p>
+    <h3 id="5ab7" >Kubernetes — Architecture</h3>
+    <p id="913d" >The Kubernetes cluster architecture mainly consists of a
+      <strong >Master </strong>and a set of <strong >Worker </strong>nodes. The Master is the controlling node. It is responsible for managing the cluster and distributing the tasks to the worker nodes. The worker nodes execute their assigned tasks and send regular status updates back to the master node, enabling the master to monitor.
+    </p>
+    <p id="9c57">Before we get into the components of the cluster in more detail, let us have a quick look at the kind of requirements they would be managing.</p>
+    <h3 id="194f">Dashboard and the Kubectl</h3>
+    <p id="8bb4" >The Kubernetes dashboard and the Kubectl are two add-on components. The dashboard is a web based utility tool and, mainly useful for monitoring various runtime objects in the K8s cluster.</p>
+    <p id="3c38">The Kubectl is a command line utility. Its a key tool for interacting with the Kubernetes master.</p>
+    <p id="ddea">Both of these tools talk to the Kubernetes master through its REST API service which is shown as API Server component in the diagram.</p>
+    <figure>
+      <div role="button" tabindex="0" >
+        <div>
+          <img alt="" src="https://miro.medium.com/max/875/1*IXIOvLLmsR2C-psnR7MegQ.png" loading="lazy" role="presentation" width="700" height="399">
+        </div>
+      </div>
+    </figure>
+    <h3 id="c245">Kube API Objects — The requirement templates</h3>
+    <p id="9056" >Kubernetes comes with a flexible design to manage our servers, environments, deployments, services and the other deployment related, as separate entities and it allows us to build our requirements by configuring these entities in its .
+      <strong >yaml </strong>
+      templates called them as
+      <strong >Kube API Objects</strong>.
+      Some of these entities are simple/complex, referring to several other entities.
+    </p>
+    <h3 id="80db" >K8s Master — Creates &amp; Manages our System</h3>
+    <p id="0086" >Master is the controlling element of the cluster.</p>
+    <p id="f801">As we send our requirement to the Kubernetes cluster, the Master node acts as the main contractor responsible to fulfill our requirements.</p>
+    <p id="532f">It divides the contract and distributes it among several worker nodes. The worker nodes work on their assigned part and keep updating their status to the master. The regular update of the status enables the Master to monitor its contract. And, in case a worker node fails to run its assigned load, the corresponding controller initiates the steps to re-assign that a different node.</p>
+    <p id="2bcf">Master has 4 parts:</p>
+    <blockquote >
+      <p id="ae34" ><strong ><em >API Server: </em></strong><em >The application that serves Kubernetes functionality through a RESTful interface and stores the state of the cluster.</em></p><p id="23be" ><strong ><em >Scheduler:</em></strong><em > Scheduler watches API server for new Pod requests. It communicates with worker nodes to create new pods and to assign work to nodes while allocating resources or imposing constraints.</em></p><p id="a3b5" ><strong ><em >Control Manager: </em></strong><em >Component on the master that runs </em><a  href="https://kubernetes.io/docs/concepts/architecture/controller/" ><strong ><em >controllers</em></strong></a><strong ><em >.</em></strong><em > Includes Node controller, Endpoint Controller, Namespace Controller, etc.</em></p><p id="81ed" ><strong ><em >Etcd Storage</em></strong><em >: It can be accessed by all nodes in the cluster. Kubernetes uses “Etcd” to store configuration data of the cluster to represent the overall state of the cluster anytime.</em></p></blockquote><p id="2e77"><strong >Worker Nodes:</strong></p><p id="018f">It has 3 parts:</p><blockquote ><p id="0f6e" ><strong ><em >kubelet :</em></strong><em > Is the heart of the worker node. It communicates with the master node API server and runs the containers scheduled for its node</em></p><p id="6eec" ><strong ><em >Kube Proxy :</em></strong><em > Takes care of networking needs of pods using IP tables.</em></p><p id="a5b2" ><strong ><em >Pod : </em></strong><em >The work horse of kubernetes which runs all your containers. You cannot run a containers inside kubernetes without a pod abstraction over it. A pod adds functionalities that is crucial to kubernetes way of networking between containers</em></p><p id="18b0" >A pod can have more than one container and all servers running inside these containers can see each other as localhosts. This makes it very convenient to separate different aspects of your app as separate containers and load them all together as one pod. There are different pod patterns like sidecar, proxy and ambassador to address different needs. Check <a  href="https://matthewpalmer.net/kubernetes-app-developer/articles/multi-container-pod-design-patterns.html" ><strong >this article</strong></a> to learn more about them</p><p id="6a55" >Pod networking interface provides a mechanism to network it with other pods in the same nodes and other worker nodes</p><p id="7e7e" >Also, each pod will be assigned its own IP address which is used by Kube-proxy to route traffic. And this IP address is visible only within the cluster</p><p id="8076" >A volume mounted inside a pod is also visible to all the containers and sometimes these volumes can be used to communicate asynchronously between the pods.</p></blockquote><p id="6684"><a  href="https://kubernetes.io/docs/concepts/" >Click here</a> to read the official documentation for more detailed information.</p><div role="separator"><span ></span><span ></span><span ></span></div><div >
+        <h3 id="2f49" >Application Deployment Model</h3>
+        <figure ><div role="button" tabindex="0" ><div ><img alt=""  src="https://miro.medium.com/max/875/0*T9GFiAzNe-WEuNHI.png" loading="lazy" role="presentation" width="700" height="406"></div></div><figcaption class="nf bm fq fo fp ng nh bn b bo bp co" data-selectable-paragraph="">Application deployment model</figcaption></figure>
+        <h3 id="89bf" ><strong class="ba">Conclusion:</strong></h3>
+        <p id="a4b5" >So far we looked at the background and the key features of the kubernetes. In the next blog post (continuation of this post) we will look on having statefulset replicas for mongodb and applying the self signed certificate to use it externally by exposing it via a service type: LoadBalancer.</p><p id="c595">Thanks for reading the article :)</p>
+        <h3 id="3f8d" >References:</h3>
+        <p id="e930" >[1] What is Kubernetes: <a  href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/" >https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</a></p><p id="57e5">[2] Kubernetes Components: <a  href="https://kubernetes.io/docs/concepts/overview/components/" >https://kubernetes.io/docs/concepts/overview/components/</a></p><p id="8096">[3] Kubernetes Persistent Volumes: <a  href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/" >https://kubernetes.io/docs/concepts/storage/persistent-volumes/</a>
+        </p>
+
+</div>
