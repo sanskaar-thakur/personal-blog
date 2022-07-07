@@ -2,8 +2,8 @@ import { ContactComponent } from './core/components/contact-component/contact.co
 import { CvComponent } from './core/components/cv-component/cv.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './core/components/home-component/home-component.component';
-import { BlogComponent } from './core/components/blog-component/blog/blog.component';
+import { HomeComponent } from './core/components/home/home.component';
+import { BlogComponent } from './core/components/blog-component/blog.component';
 
 const routes: Routes = [
   {
